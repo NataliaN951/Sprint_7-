@@ -42,8 +42,8 @@ public class CourierTest {
     //успешный запрос возвращает ok: true;
     //Необходимые тестовые данные создаются перед тестом и удаляются после того, как он выполнится.
     @Test
-    @DisplayName("Courier - Создание курьера") // имя теста
-    @Description("Basic test for /api/v1/courier endpoint") // описание теста
+    @DisplayName("Courier - Создание курьера")
+    @Description("Basic test for /api/v1/courier endpoint")
     public void createCourierWithValidData() {
         Courier courier = CourierGenerator.getRandom();
         ValidatableResponse createResponse = courierMethods.create(courier);
@@ -59,8 +59,8 @@ public class CourierTest {
 
     //нельзя создать двух одинаковых курьеров;
     @Test
-    @DisplayName("Courier - Создание курьера с теми же логином, паролем, именем") // имя теста
-    @Description("Basic test for /api/v1/courier endpoint") // описание теста
+    @DisplayName("Courier - Создание курьера с теми же логином, паролем, именем")
+    @Description("Basic test for /api/v1/courier endpoint")
     public void createCourierWithSameData() {
         Courier courier = CourierGenerator.getRandom();
         ValidatableResponse createResponse = courierMethods.create(courier);
@@ -81,8 +81,8 @@ public class CourierTest {
 
     // если одного из полей нет, запрос возвращает ошибку;
     @Test
-    @DisplayName("Courier - Создание курьера, если одного из полей нет") // имя теста
-    @Description("Test for /api/v1/courier endpoint") // описание теста
+    @DisplayName("Courier - Создание курьера, если одного из полей нет")
+    @Description("Test for /api/v1/courier endpoint")
     public void createCourierWithoutOneField() {
         Courier courier = new Courier("977799", "Max799");
         ValidatableResponse createResponse = courierMethods.create(courier);
@@ -96,8 +96,8 @@ public class CourierTest {
 
     //если создать пользователя с логином, который уже есть, возвращается ошибка.
     @Test
-    @DisplayName("Courier - Создание курьера, если создать пользователя с логином, который уже есть") // имя теста
-    @Description("Test for /api/v1/courier endpoint") // описание теста
+    @DisplayName("Courier - Создание курьера, если создать пользователя с логином, который уже есть")
+    @Description("Test for /api/v1/courier endpoint")
     public void createCourierWithSameLogin() {
         Courier courier = CourierGenerator.getRandom();
         ValidatableResponse createResponse = courierMethods.create(courier);

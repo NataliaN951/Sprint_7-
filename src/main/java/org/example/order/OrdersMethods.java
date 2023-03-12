@@ -31,4 +31,14 @@ public class OrdersMethods extends ScooterRestClient {
                         .put(ORDER_URI + "cancel?track=" + track)
                         .then();
     }
+
+    @Step("Получение списка заказов")
+    public ValidatableResponse getOrderList() {
+        return
+                given()
+                        .spec(getbaseReqSpec())
+                        .when()
+                        .get(ORDER_URI)
+                        .then();
+    }
 }
